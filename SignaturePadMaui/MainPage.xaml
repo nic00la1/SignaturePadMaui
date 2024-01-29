@@ -7,7 +7,7 @@
              x:DataType="local:MainPage">
 
     <Grid ColumnDefinitions="*,*"
-          RowDefinitions="*, Auto"
+          RowDefinitions="*, Auto, 200"
           RowSpacing="10"
           ColumnSpacing="10"
           Padding="10">
@@ -18,12 +18,20 @@
             ShouldClearOnFinish="False"
             Lines="{Binding Lines}"
             LineColor="Red"
-            LineWidth="5"/>
+            LineWidth="5"
+            DrawingLineCompleted="DrawingView_DrawingLineCompleted"/>
         
         <Button Grid.Row="1" Text="Clear"
                 Clicked="Button_Clicked_1"/>
         <Button Grid.Row="1" Grid.Column="1" Text="Save"
                 Clicked="Button_Clicked"/>
+
+        <Image x:Name="drawingImage"
+               HorizontalOptions="Center"
+               WidthRequest="400"
+               HeightRequest="200"
+               Grid.Row="2"
+               Grid.ColumnSpan="2"/>
     </Grid>
 
 
